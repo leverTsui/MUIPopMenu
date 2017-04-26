@@ -1,130 +1,74 @@
-# MUIPopMenu
+//
+//  ViewController.m
+//  MUIPopMenuDemo
+//
+//  Created by xulihua on 2017/4/25.
+//  Copyright © 2017年 huage. All rights reserved.
+//
 
-## 负责人
-`徐利华(316495)`
+#import "ViewController.h"
+#import <Masonry/Masonry.h>
+#import "MUIPopMenu.h"
 
-## 功能简介
+@interface ViewController ()<MUIPopMenuViewDelegate>
 
-#### 九宫格动画控件是一个在手机上查看多个选项的UI控件，它支持以下功能
-* 从点击出弹出按钮视图 
-
-#### Demo
-![Dome](../images/MUIMultiPhotoControllerDemo.gif)
-
-## 源码仓库
-- [git仓库](http://git.sdp.nd/component-ios/muipopmenu.git)
-
-
-## 安装说明
-
-### 添加依赖
-
-- 组件`podspec`文件添加s.dependency 'MUIPopMenu'
-- 组件`Podfile`文件添加pod 'MUIPopMenu'
-
-### 本控件依赖
-
-- pop
-- Masonry
-- APFKit
-- MUPFoundationProfiler 
-
-## 使用说明
-
-### 数据模型
-
-- `MUIMultiPhotoController`初始化，数据模型接收一个构造好的`dataArr`数组
-
-```objc
-    MUIPopMenuView menu = [MUIPopMenuView shareInstance];
-    menu.delegate = self;
-    menu.popMenuSpeed = 12.0f;
-    menu.animationType = MUIPopMenuViewAnimationTypeViscous;
-    menu.dataSource = self.dataArr;
-```
-
-- `dataArr`数组由`MUIPopMenuModel`对象组成：
-
-```objc
-#import <UIKit/UIKit.h>
-
-typedef enum : NSUInteger {
-    MUIPopMenuTransitionTypeDefault,
-    MUIPopMenuTransitionTypeSystemApi,
-    MUIPopMenuTransitionTypeCustomizeApi,
-} MUIPopMenuTransitionType;
-
-@class MUIPopMenuButton;
-@interface MUIPopMenuModel : NSObject
-
-typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInteger index);
-
-
-@property (nonatomic, copy) NSString *imageName;
-@property (nonatomic, copy) NSString *highlightImageName;
-
-
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) UIImage *highlightImage;
-
-/**
- *  按钮文字颜色
- */
-@property (nonatomic, strong) UIColor *textColor;
-
-/**
- *  按钮文字大小
- */
-@property (nonatomic, strong) UIFont *titleFont;
-
-@property (nonatomic, strong) UIColor *transitionRenderingColor;
-
-@property (nonatomic, assign) MUIPopMenuTransitionType transitionType;
-
-@property (nonatomic, strong) MUIPopMenuButton* menuButton;
-
-@property (nonatomic, copy) MUIPopMenuButtonClickBlock buttonClickBlock;
-
-+ (instancetype)popMenuModelWithImage:(UIImage *)image
-                          titleString:(NSString *)title
-                        transitionType:(MUIPopMenuTransitionType)transitionType
-                        buttonClickBlock:(MUIPopMenuButtonClickBlock)buttonClickBlock;
-
-+ (instancetype)popMenuModelWithImageName:(NSString *)imageName
-                       highlightImageName:(NSString *)highlightImageName
-                              titleString:(NSString *)title
-                           transitionType:(MUIPopMenuTransitionType)transitionType
-                 transitionRenderingColor:(UIColor *)transitionRenderingColor;
-
-+ (instancetype)popMenuModelWithImage:(UIImage *)image
-                       highlightImage:(UIImage *)highlightImage
-                          titleString:(NSString *)title
-                       transitionType:(MUIPopMenuTransitionType)transitionType
-             transitionRenderingColor:(UIColor *)transitionRenderingColor;
-
-- (instancetype)initWithImageName:(NSString *)imageName
-               highlightImageName:(NSString *)highlightImageName
-                      titleString:(NSString *)title
-                   transitionType:(MUIPopMenuTransitionType)transitionType
-         transitionRenderingColor:(UIColor *)transitionRenderingColor;
-
-- (instancetype)initWithImage:(UIImage *)image
-               highlightImage:(UIImage *)highlightImage
-                  titleString:(NSString *)title
-               transitionType:(MUIPopMenuTransitionType)transitionType
-     transitionRenderingColor:(UIColor *)transitionRenderingColor;
+@property (nonatomic, strong) MUIPopMenuView* menu;
+@property (nonatomic, strong) UIImageView *backgroudIV;
+@property (nonatomic, strong) UIButton *topButton;
+@property (nonatomic, strong) UIButton *middleButton;
+@property (nonatomic, strong) UIButton *bottomButton;
+@property (nonatomic, strong) NSArray *dataArr;
+@property (nonatomic, assign) NSInteger random;
 
 @end
 
-```
+@implementation ViewController
 
-### 使用范例 
+#pragma mark - life cycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 
-- 初始化MUIPopMenuView对象，传入构造好的`MUIPopMenuModel`数组
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self addPageSubviews];
+    [self layoutPageSubviews];
+}
 
-```objc
+- (void)addPageSubviews {
+    [self.view addSubview:self.backgroudIV];
+    [self.view addSubview:self.topButton];
+    [self.view addSubview:self.middleButton];
+    [self.view addSubview:self.bottomButton];
+}
+
+- (void)layoutPageSubviews {
+    [self.backgroudIV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    [self.topButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(40);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(49);
+    }];
+    [self.middleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.view.mas_centerY);
+        make.centerX.mas_equalTo(self.view.mas_centerX).offset(100);;
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(49);
+    }];
+    [self.bottomButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-40);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(49);
+    }];
+}
 
 #pragma mark - event response
 - (void)showMenu:(UIButton*)sender
@@ -135,11 +79,11 @@ typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInte
         }
             break;
         case 1001: {
-            self.menu.animationType = MUIPopMenuViewAnimationTypeFromRect;
+            self.menu.animationType = MUIPopMenuViewAnimationTypeSina;
         }
             break;
         case 1002: {
-            self.menu.animationType = MUIPopMenuViewAnimationTypeFromRect;
+            self.menu.animationType = MUIPopMenuViewAnimationTypeViscous;
         }
             break;
             
@@ -170,6 +114,13 @@ typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInte
     [self.menu showMenu];
 }
 
+#pragma mark - MUIPopMenuViewDelegate
+- (void)popMenuView:(MUIPopMenuView*)popMenuView
+didSelectItemAtIndex:(NSUInteger)index
+{
+    
+}
+
 #pragma mark - getter & setter
 - (MUIPopMenuView *)menu {
     if (!_menu) {
@@ -179,6 +130,53 @@ typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInte
         _menu.animationType = MUIPopMenuViewAnimationTypeViscous;
     }
     return _menu;
+}
+
+- (UIButton *)topButton {
+    if (!_topButton) {
+        _topButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _topButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        _topButton.titleLabel.textColor = [UIColor whiteColor];
+        [_topButton setTitle:@"顶部按钮" forState:UIControlStateNormal];
+        [_topButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _topButton.tag = 1000;
+        [_topButton addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _topButton;
+}
+
+- (UIButton *)middleButton {
+    if (!_middleButton) {
+        _middleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _middleButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        _middleButton.titleLabel.textColor = [UIColor whiteColor];
+        [_middleButton setTitle:@"中间按钮" forState:UIControlStateNormal];
+        [_middleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _middleButton.tag = 1001;
+        [_middleButton addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _middleButton;
+}
+
+
+- (UIButton *)bottomButton {
+    if (!_bottomButton) {
+        _bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _bottomButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        [_bottomButton setTitle:@"底部按钮" forState:UIControlStateNormal];
+        [_bottomButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _bottomButton.tag = 1002;
+        [_bottomButton addTarget:self action:@selector(showMenu:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _bottomButton;
+}
+
+- (UIImageView *)backgroudIV {
+    if (!_backgroudIV) {
+        _backgroudIV = [[UIImageView alloc] init];
+        _backgroudIV.image = [UIImage imageNamed:@"huoying4.jpg"];
+    }
+    return _backgroudIV;
 }
 
 - (NSArray *)dataArr {
@@ -352,76 +350,4 @@ typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInte
     return _dataArr;
 }
 
-```
- 
-### 主要接口
-- 单例
-
-    ` + (instancetype)shareInstance;`     
-
-- 显示菜单视图
-
-    ` - (void)showMenu; `
-
-- 隐藏菜单视图
-
-    ` - (void)hideMenu; `
-
-- 判断菜单是否打开
-
-    `- (BOOL)isOpenMenu;`
-
-### 代理
-
-- 按钮点击事件
-
-    ` - (void)popMenuView:(MUIPopMenuView*)popMenuView didSelectItemAtIndex:(NSUInteger)index;` 
-    
-### 属性
-
-```objc
-    /**
- *  背景类型默认为 'MUIPopMenuViewBackgroundTypeLightBlur'
- *  The default is 'MUIPopMenuViewBackgroundTypeLightBlur'
-*/
-@property (nonatomic, assign) MUIPopMenuViewBackgroundType backgroundType;
-
-/**
- *  动画类型
- *  animation Type
- */
-@property (nonatomic, assign) MUIPopMenuViewAnimationType animationType;
-
-/**
- *  按钮文字颜色
- */
-@property (nonatomic, strong) UIColor *textColor;
-
-/**
- *  按钮文字大小
- */
-@property (nonatomic, strong) UIFont *titleFont;
-
-/**
- *  默认为 10.0f         取值范围: 0.0f ~ 20.0f
- *  default is 10.0f    Range: 0 ~ 20
- */
-@property (nonatomic, assign) CGFloat popMenuSpeed;
-
-/**
- *  按钮弹出位置
- */
-@property (nonatomic, assign) CGRect fromRect;
-```
-
-    
-## 架构
-![类图](../images/MUIMultiPhotoController.png)
-
-
-
-
-
-
-
-
+@end

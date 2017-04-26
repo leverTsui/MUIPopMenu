@@ -1,0 +1,39 @@
+# Uncomment this line to define a global platform for your project
+
+source 'http://git.sdp.nd/Mirrors/specs.git'
+source 'http://git.sdp.nd/cocoapods/spec.git'
+
+platform :ios, '7.0'
+
+project 'MUIPopMenuDemo.xcodeproj'
+ 
+def dependency
+
+    pod 'Masonry'
+    pod 'pop'
+
+end
+ 
+def develop_dependency 
+
+end
+
+target 'MUIPopMenuDemo' do
+    
+    dependency
+    develop_dependency
+end
+
+target 'MUIPopMenuDemoTests' do
+    
+    dependency
+    develop_dependency
+    
+end
+
+target 'MUIPopMenuDemoUITests' do
+    
+    dependency
+    develop_dependency
+    
+end

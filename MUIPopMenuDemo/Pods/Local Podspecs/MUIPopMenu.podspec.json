@@ -1,0 +1,57 @@
+{
+  "name": "MUIPopMenu",
+  "version": "0.0.8",
+  "summary": "MUIPopMenu的一个简单示范工程.",
+  "description": "MUIPopMenu的一个简单示范工程示范工程的长描述.",
+  "homepage": "http://git.sdp.nd/component-ios/MUIPopMenu",
+  "license": "MIT",
+  "authors": {
+    "颜志炜": "yanzhiwei147@gmail.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "http://git.sdp.nd/cocoapods/muipopmenu.git",
+    "tag": "0.0.8"
+  },
+  "default_subspecs": "Develop",
+  "dependencies": {
+    "pop": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "APFKit": [
+
+    ],
+    "MUPFoundationProfiler": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Develop",
+      "public_header_files": [
+        "MUIPopMenu/*.h",
+        "MUIPopMenu/include/**/*.h"
+      ],
+      "source_files": "MUIPopMenu/**/*.{h,m}",
+      "resource_bundles": {
+        "MUIPopMenuBundle": [
+          "MUIPopMenuBundle/*"
+        ]
+      }
+    },
+    {
+      "name": "Release",
+      "public_header_files": "MUIPopMenu.framework/Versions/A/**/*.h",
+      "source_files": "MUIPopMenu.framework/Versions/A/**/*.h",
+      "resources": "MUIPopMenuBundle.bundle",
+      "preserve_paths": "*.framework",
+      "vendored_frameworks": "MUIPopMenu.framework",
+      "frameworks": "Accelerate"
+    }
+  ]
+}
