@@ -1,7 +1,4 @@
-# MUIPopMenu
-
-## 负责人
-`徐利华(316495)`
+# MUIPopMenu 
 
 ## 功能简介
 
@@ -9,11 +6,7 @@
 * 从点击出弹出按钮视图 
 
 #### Demo
-![Dome](../images/MUIMultiPhotoControllerDemo.gif)
-
-## 源码仓库
-- [git仓库](http://git.sdp.nd/component-ios/muipopmenu.git)
-
+![Dome](https://github.com/hua16/MUIPopMenu/blob/master/%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif)
 
 ## 安装说明
 
@@ -414,9 +407,6 @@ typedef void(^MUIPopMenuButtonClickBlock)(MUIPopMenuModel* popMenuModel, NSUInte
 @property (nonatomic, assign) CGRect fromRect;
 ```
 
-    
-## 架构
-![类图](../images/MUIMultiPhotoController.png)
 
 
 
