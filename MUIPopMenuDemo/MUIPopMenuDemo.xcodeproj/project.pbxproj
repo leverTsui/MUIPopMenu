@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1685BC11500E7B6D51DCEFA6 /* libPods-MUIPopMenuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A7DD6A3D67FE667E6081A7 /* libPods-MUIPopMenuDemo.a */; };
+		85D5AB381517260529D9A822 /* libPods-MUIPopMenuDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 641C144449696CCA05B591E3 /* libPods-MUIPopMenuDemoTests.a */; };
+		9EAE2DA406EC7BD53259E140 /* libPods-MUIPopMenuDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC76CB389BA6DFBCCEB27FE /* libPods-MUIPopMenuDemoUITests.a */; };
 		C6A347A11EAF5F8A00EE71D4 /* MUIPopMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3478A1EAF5F8A00EE71D4 /* MUIPopMenuButton.m */; };
 		C6A347A21EAF5F8A00EE71D4 /* MUIPopMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3478C1EAF5F8A00EE71D4 /* MUIPopMenuModel.m */; };
 		C6A347A31EAF5F8A00EE71D4 /* MUIPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A3478E1EAF5F8A00EE71D4 /* MUIPopMenuView.m */; };
@@ -47,10 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08A7DD6A3D67FE667E6081A7 /* libPods-MUIPopMenuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUIPopMenuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAB1B8D7CD95D8F3C7E4EFC /* Pods-MUIPopMenuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemo/Pods-MUIPopMenuDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3F6FBC76D2EEFBF3B2EAE3F4 /* Pods-MUIPopMenuDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemoUITests/Pods-MUIPopMenuDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		488C9DC3DF72F6C96BFF6623 /* Pods-MUIPopMenuDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemoUITests/Pods-MUIPopMenuDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		61D02AC8A06C1ECDA69AC602 /* Pods-MUIPopMenuDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemoTests/Pods-MUIPopMenuDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		641C144449696CCA05B591E3 /* libPods-MUIPopMenuDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUIPopMenuDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72571ADA63FF7762A237EAE4 /* Pods-MUIPopMenuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemo/Pods-MUIPopMenuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		77D0794AF342378942719909 /* Pods-MUIPopMenuDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUIPopMenuDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUIPopMenuDemoTests/Pods-MUIPopMenuDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6A347891EAF5F8A00EE71D4 /* MUIPopMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUIPopMenuButton.h; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		C6FE58791EAF25F300D39E7F /* MUIPopMenuDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUIPopMenuDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FE587D1EAF25F300D39E7F /* MUIPopMenuDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUIPopMenuDemoUITests.m; sourceTree = "<group>"; };
 		C6FE587F1EAF25F300D39E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC76CB389BA6DFBCCEB27FE /* libPods-MUIPopMenuDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUIPopMenuDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 				C6A347AF1EAF679100EE71D4 /* libPods-MUIPopMenuDemo.a in Frameworks */,
 				C6A347AD1EAF66DD00EE71D4 /* Foundation.framework in Frameworks */,
 				C6A347AB1EAF66D800EE71D4 /* UIKit.framework in Frameworks */,
+				1685BC11500E7B6D51DCEFA6 /* libPods-MUIPopMenuDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D5AB381517260529D9A822 /* libPods-MUIPopMenuDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAE2DA406EC7BD53259E140 /* libPods-MUIPopMenuDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +151,9 @@
 				C6A347AE1EAF679100EE71D4 /* libPods-MUIPopMenuDemo.a */,
 				C6A347AC1EAF66DD00EE71D4 /* Foundation.framework */,
 				C6A347AA1EAF66D800EE71D4 /* UIKit.framework */,
+				08A7DD6A3D67FE667E6081A7 /* libPods-MUIPopMenuDemo.a */,
+				641C144449696CCA05B591E3 /* libPods-MUIPopMenuDemoTests.a */,
+				DAC76CB389BA6DFBCCEB27FE /* libPods-MUIPopMenuDemoUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 				C6FE58761EAF25F300D39E7F /* Frameworks */,
 				C6FE58771EAF25F300D39E7F /* Resources */,
 				3AE6901E5E07C4846018EC9C /* [CP] Copy Pods Resources */,
+				14F644FF02C5A4CCE2FF8498 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,19 +424,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		180604EBC43C0D92826C043B /* [CP] Check Pods Manifest.lock */ = {
+		14F644FF02C5A4CCE2FF8498 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MUIPopMenuDemoUITests/Pods-MUIPopMenuDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		180604EBC43C0D92826C043B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUIPopMenuDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1E1C6ED4699A4596160DA560 /* [CP] Copy Pods Resources */ = {
@@ -492,13 +523,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUIPopMenuDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C44440E8EB2A81287D8DC5AD /* [CP] Embed Pods Frameworks */ = {
@@ -522,13 +556,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUIPopMenuDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MUIPopMenuDemo/MUIPopMenu/include/MUIPopMenuView.m"
+            timestampString = "547614495.908901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-hideMenu"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MUIPopMenuDemo/MUIPopMenu/include/MUIPopMenuView.m"
+            timestampString = "547614495.9094861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-addPageSubViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MUIPopMenuDemo/MUIPopMenu/include/MUIPopMenuView.m"
+            timestampString = "547614495.909795"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "-backgroundAnimate"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,7 +1,6 @@
 # Uncomment this line to define a global platform for your project
 
-source 'http://git.sdp.nd/Mirrors/specs.git'
-source 'http://git.sdp.nd/cocoapods/spec.git'
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 

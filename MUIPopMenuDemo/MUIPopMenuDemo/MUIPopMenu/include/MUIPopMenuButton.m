@@ -21,8 +21,7 @@
         self.layer.masksToBounds = YES;
         
         [self setBackgroundColor:[UIColor clearColor]];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//        self.titleLabel.adjustsFontSizeToFitWidth = YES;
+        self.titleLabel.textAlignment = NSTextAlignmentCenter; 
         self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         [self setTitleColor:model.textColor forState:UIControlStateNormal];
         self.titleLabel.font = model.titleFont;

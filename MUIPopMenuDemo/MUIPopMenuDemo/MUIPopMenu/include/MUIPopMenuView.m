@@ -109,12 +109,12 @@ UIImage * getScreenshot(UIView *view){
         disappearButton.adjustsImageWhenHighlighted = NO;
         disappearButton.tag = 3;
         
-        [_backgroundView addSubview:disappearButton];
-        _disappearButton = disappearButton;
         [disappearButton setImage:[UIImage imageNamed:@"chat_popup_top_icon_close_normal.png"] forState:UIControlStateNormal];
         [disappearButton setImage:[UIImage imageNamed:@"chat_popup_top_icon_close_pressed.png"] forState:UIControlStateHighlighted];
         disappearButton.alpha = 0;
         [disappearButton addTarget:self action:@selector(closeWithDuration:) forControlEvents:UIControlEventTouchUpInside];
+        _disappearButton = disappearButton;
+
         
         _pageControl = [[UIPageControl alloc] init];
         _pageControl.numberOfPages = (self.dataSource.count-1)/9+1;
@@ -122,8 +122,15 @@ UIImage * getScreenshot(UIView *view){
         _pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:0 alpha:0.15];
         _pageControl.currentPageIndicatorTintColor = [UIColor colorWithWhite:0 alpha:0.35];
         [_pageControl addTarget:self action:@selector(pageControlClick:) forControlEvents:UIControlEventValueChanged];
-        [_backgroundView addSubview:_pageControl];
         _pageControl.alpha = 0;
+        
+        if ([backgroundView isKindOfClass:[UIVisualEffectView class]]) {
+            [((UIVisualEffectView *)_backgroundView).contentView addSubview:_pageControl];
+            [((UIVisualEffectView *)_backgroundView).contentView addSubview:disappearButton];
+        } else {
+            [_backgroundView addSubview:_pageControl];
+            [_backgroundView addSubview:disappearButton];
+        }
     }    
     UIScrollView* itemAnimateView = [_backgroundView viewWithTag:2];
     if (self.animationType == MUIPopMenuViewAnimationTypeFromRect) {
@@ -137,7 +144,13 @@ UIImage * getScreenshot(UIView *view){
             itemAnimateView.showsHorizontalScrollIndicator = NO;
             itemAnimateView.showsVerticalScrollIndicator = NO;
             [itemAnimateView setContentSize:CGSizeMake(((self.dataSource.count-1)/9+1) * MUIPopMenuScreenWidth, CGRectGetHeight(itemAnimateView.frame))];
-            [_backgroundView addSubview:itemAnimateView];
+            
+            if ([backgroundView isKindOfClass:[UIVisualEffectView class]]) {
+                [((UIVisualEffectView *)_backgroundView).contentView addSubview:itemAnimateView];
+            } else {
+                [_backgroundView addSubview:itemAnimateView];
+            }
+
             _itemAnimateView = itemAnimateView;
         }
         itemAnimateView.frame = [MUIPopMenuStrategyTool getItemAnimateViewRect:self.dataSource.count fromRect:self.fromRect];
@@ -280,7 +293,12 @@ UIImage * getScreenshot(UIView *view){
         if (self.animationType == MUIPopMenuViewAnimationTypeFromRect) {
             [self.itemAnimateView addSubview:model.menuButton];
         } else {
-            [self.backgroundView addSubview:model.menuButton];
+            if ([self.backgroundView isKindOfClass:[UIVisualEffectView class]]) {
+                [((UIVisualEffectView *)_backgroundView).contentView addSubview:model.menuButton];
+            } else {
+                [self.backgroundView addSubview:model.menuButton];
+            }
+
         }
 
         CGRect toRect;
